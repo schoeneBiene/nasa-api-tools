@@ -18,3 +18,11 @@ class Nasa():
                 
                 res = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={key}')
                 return res
+    class earth(): # Refuses to work because it couldnt find anything, even on the one on the nasa api example page bruh
+         def __init__(self):
+              pass
+         def Imagery(lat, lin):
+              headers = {"lat":lat, "lon": lin, "api_key": key}
+              print(headers)
+              res = requests.get("https://api.nasa.gov/planetary/earth/imagery",headers)
+              return res
