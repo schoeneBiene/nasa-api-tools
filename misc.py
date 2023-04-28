@@ -15,3 +15,15 @@ def saveImg(url, location):
         f.write(img)
     
     return 0
+
+def saveContent(content, location):
+    locationpath = os.path.join(os.path.join(pathlib.Path(__file__).parent.resolve(), location))
+    res = os.path.exists(location)
+    
+    if res == True:
+        return 3
+
+    with open(locationpath, "xb") as f:
+        f.write(content)
+    
+    return 0
